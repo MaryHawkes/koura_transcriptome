@@ -18,3 +18,4 @@ singularity run -B /Volumes "${BUSCO_CONTAINER}" \
     &>  ../logs/busco_all.log
 )
 
+

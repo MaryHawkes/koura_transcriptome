@@ -26,7 +26,7 @@ singularity exec -B /Volumes img/bbmap_38.00.simg bbmerge.sh \
     verystrict=t \
     adapters=/adapters.fa \
     &> output/logs/bbmerge_s2.log &
-    
+
 # merge sample 3
 singularity exec -B /Volumes img/bbmap_38.00.simg bbmerge.sh \
     in=output/bbduk_trim/s3_r1.fq.gz \

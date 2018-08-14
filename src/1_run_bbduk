@@ -52,3 +52,5 @@ singularity exec -B /Volumes img/bbmap_38.00.simg bbduk.sh \
     &> output/logs/bbduk_s4.log &
 
 wait
+
+

@@ -20,4 +20,3 @@ cat output/bbmerge/s4_r1_unmerged.fq.gz \
     > output/bbmerge/s4_r1_all.fq.gz
 
 wait
-
