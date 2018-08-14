@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -eu
+
+#seems to work! outputs in the bbmerge folder match what they should.
+cat output/bbmerge/s1_r1_unmerged.fq.gz \
+    output/bbmerge/s1_merged.fq.gz \
+    > output/bbmerge/s1_r1_all.fq.gz
+
+cat output/bbmerge/s2_r1_unmerged.fq.gz \
+    output/bbmerge/s2_merged.fq.gz \
+    > output/bbmerge/s2_r1_all.fq.gz
+
+cat output/bbmerge/s3_r1_unmerged.fq.gz \
+    output/bbmerge/s3_merged.fq.gz \
+    > output/bbmerge/s3_r1_all.fq.gz
+
+cat output/bbmerge/s4_r1_unmerged.fq.gz \
+    output/bbmerge/s4_merged.fq.gz \
+    > output/bbmerge/s4_r1_all.fq.gz
+
+wait
+
