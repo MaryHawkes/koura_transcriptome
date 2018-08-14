@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -eu
+
+#does .gz matter?
+#Needed img (singularity programs) within home folder
+#need to be in home folder in order to run anythign successfully
+#home folder is kouratranscriptome
+#bbduk seems to have worked. Generated bbduk_trim file in output.
+# run bbduk on sample 1
+singularity exec -B /Volumes img/bbmap_38.00.simg bbduk.sh \
+    in=data/reads/CCRA9ANXX-4010-01-1-1_S10_L008_R1_001.fastq.gz \
+    in2=data/reads/CCRA9ANXX-4010-01-1-1_S10_L008_R2_001.fastq.gz \
+    out=output/bbduk_trim/s1_r1.fq.gz \
+    out2=output/bbduk_trim/s1_r2.fq.gz \
+    ref=/adapters.fa \
+    ktrim=r k=23 mink=11 hdist=1 tpe tbo \
+    qtrim=r trimq=15 \
+    &> output/logs/bbduk_s1.log &
+
+# run bbduk on sample 2
+singularity exec -B /Volumes img/bbmap_38.00.simg bbduk.sh \
+    in=data/reads/CCRA9ANXX-4010-02-1-1_S11_L008_R1_001.fastq.gz \
+    in2=data/reads/CCRA9ANXX-4010-02-1-1_S11_L008_R2_001.fastq.gz \
+    out=output/bbduk_trim/s2_r1.fq.gz \
+    out2=output/bbduk_trim/s2_r2.fq.gz \
+    ref=/adapters.fa \
+    ktrim=r k=23 mink=11 hdist=1 tpe tbo \
+    qtrim=r trimq=15 \
+    &> output/logs/bbduk_s2.log &
+
+# run bbduk on sample 3
+singularity exec -B /Volumes img/bbmap_38.00.simg bbduk.sh \
+    in=data/reads/CCRA9ANXX-4010-03-1-1_S12_L008_R1_001.fastq.gz \
+    in2=data/reads/CCRA9ANXX-4010-03-1-1_S12_L008_R2_001.fastq.gz \
+    out=output/bbduk_trim/s3_r1.fq.gz \
+    out2=output/bbduk_trim/s3_r2.fq.gz \
+    ref=/adapters.fa \
+    ktrim=r k=23 mink=11 hdist=1 tpe tbo \
+    qtrim=r trimq=15 \
+    &> output/logs/bbduk_s3.log &
+
+# run bbduk on sample 4
+singularity exec -B /Volumes img/bbmap_38.00.simg bbduk.sh \
+    in=data/reads/CCRA9ANXX-4010-04-1-1_S13_L008_R1_001.fastq.gz \
+    in2=data/reads/CCRA9ANXX-4010-04-1-1_S13_L008_R2_001.fastq.gz \
+    out=output/bbduk_trim/s4_r1.fq.gz \
+    out2=output/bbduk_trim/s4_r2.fq.gz \
+    ref=/adapters.fa \
+    ktrim=r k=23 mink=11 hdist=1 tpe tbo \
+    qtrim=r trimq=15 \
+    &> output/logs/bbduk_s4.log &
+
+wait
