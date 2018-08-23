@@ -8,3 +8,5 @@ step 6 calculate exp matrices
 step 7 calculate n50 and exn50
 step 8 run busco
 
+plot_exn50_r is an R script used to plot the output of exn50 from step 7 in Rstudio
+

@@ -1,0 +1,7 @@
+To use github as a repository:
+Commands indicated by ()
+Step 1: (git status) to see current status of repository
+Step 2: (git add "file_name") to update or add a file to github
+Step 3: (git status) again to see what you're updating/adding
+Step 4: (git commit -m "message to yourself") to commit the changes and leave a message to yourself about what/why you're doing
+Step 5: (git push origin master) push the changes you've commited to github
