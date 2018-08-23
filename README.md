@@ -1,2 +1,10 @@
 # koura_transcriptome
-step 1 mer overlapping reads
+step 1 run bbduk
+step 2 merge overlapping reads
+step 3 add merged reads to r1 file (from bbduk trimming)
+step 4 run trinity
+step 5 calculate trinity abundances
+step 6 calculate exp matrices
+step 7 calculate n50 and exn50
+step 8 run busco
+
