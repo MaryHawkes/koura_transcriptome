@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -eu
+
+singularity exec -B /Volumes img/trinity_2.8.0.simg \
+        TrinityStats.pl \
+	output/trinity/Trinity.fasta \
+	> output/trinity_stats/stats.txt
+
+singularity exec -B /Volumes img/trinity_2.8.0.simg \
+        contig_ExN50_statistic.pl \
+	output/trinity_abundance/RSEM.isoform.TPM.not_cross_norm \
+	output/trinity/Trinity.fasta \
+	>output/trinity_stats/exn50.out.txt \
+	2>output/logs/trinity_quality_exn50.log
+
