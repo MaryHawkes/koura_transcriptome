@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+trinotate_pipeline \
+    --trinity_fasta output/trinity/Trinity.fasta \
+    --blast_db data/db/uniprot_sprot.pep \
+    --hmmer_db data/db/Pfam-A.hmm \
+    --sqlite_db data/db/Trinotate.sqlite \
+    --outdir output/trinotate \
+    --threads 20 \
+    &> trinotate_pipeline.log
