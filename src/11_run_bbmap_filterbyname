@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eu
+
+singularity exec -B /Volumes img/bbmap_38.00.simg \
+	filterbyname.sh \
+	in=output/TransDecoder/Trinity.fasta.transdecoder.pep \
+	names=clustalo_input/phmmer_clustalo_trinity_IDs.txt \
+	out=output/clustalo/filtered.fa \
+	&> output/logs/filterbyname.log
