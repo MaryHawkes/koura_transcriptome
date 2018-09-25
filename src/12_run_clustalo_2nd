@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+set -eu
+
+
+singularity exec -B /Volumes img/clustalo_1.2.4.simg clustalo \
+	-i clustalo_input/combined_hox.fasta \
+	--out output/clustalo/2nd_alignment.fasta \
+	--threads=20 \
+	&> output/logs/clustalo_2nd

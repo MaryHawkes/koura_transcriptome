@@ -1,0 +1,29 @@
+#!/usr/bin/env Rscript
+
+library(ape)
+library(seqinr)
+
+## read tree 
+
+koura.tree<-read.alignment(file="trimal.fasta", format="fasta")
+?read.alignment
+list.files ()
+
+##distance matrix
+dist.alignment(koura.tree)
+dist.koura<-dist.alignment(koura.tree)
+?dist.alignment
+#put into ape program
+bio.tree<-bionj(dist.koura)
+plot(bio.tree)
+
+## make unrooted tree
+plot(unroot(bio.tree),type="unrooted",cex=0.6,
+     use.edge.length=FALSE,lab4ut="axial",
+     no.margin=TRUE, show.node.label=TRUE, underscore = TRUE)
+
+
+##make fan tree?
+plot(bio.tree,type="fan",fsize=0.7,lwd=1,
+         ftype="i")
+
