@@ -20,5 +20,16 @@ step 9 run trinotate for annotation
 
 step 10 run 1st clustalo to creat aligned all hox genes file
 
+step 11 get fasta records of transcript IDed from 1st clustalo
+
+Step 12 run second culstalo aligning hox genes to transcripts
+
+step 13 run trimal to trim alignment
+
+step 14 make phylogenetic tree of aligned things
+
+step 15 obtian stats form trinotate txt file
+
+
 plot_exn50_r is an R script used to plot the output of exn50 from step 7 in Rstudio
 
